@@ -1,0 +1,10 @@
+name: SinkingShip
+main: com.minecreatr.sinkingship.SinkingShip
+version: 0.0.1a
+author: minecreatr
+description: SinkingShip minigame plugin
+website: http://www.tellmanenterprise.com
+commands:
+   ss:
+      description: Sinking Ship base command
+      usage: /ss [args]

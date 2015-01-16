@@ -1,0 +1,179 @@
+#MySQl
+#MySQL is used for logging stats of various things, if enabled
+#all stats are stored in MySQL rather then stats.yml. Plus, more
+#things are logged.
+
+dbhost: 'localhost'
+dbport: '3306'
+dbuser: 'root'
+dbpassword: 'password123'
+#Enable MySQL
+mysql: true
+
+#General Settings
+
+#Display BossBar
+bossbar: true
+
+#Default Water Speed. That is the blocks per seconds for example 1 block every 4 seconds.
+blocksPer: 1
+seconds: 4
+
+#Defualt Time limit in seconds, if 0 there will be no time limit by default
+timelimit: 0
+
+#Defualt Minimun players needed to start the game
+minPlayers: 5
+
+#Default Amount of players at which game will start without voting
+startNoVote: 8
+
+#Amount of votes needed to start
+amountOfVotes: 5
+
+#Default Maximum number of players in an arena
+maxPlayers: 10
+
+#Prevent in game players and spectators from breaking blocks
+preventBlockBreak: true
+
+#Prevent in game players and spectators from interacting with anything
+preventInteract: true
+
+#Game Lobby Location
+lobby:
+    #The X Coordinate of the lobby
+    x: 0
+    #The Y Coordinate of the lobby
+    y: 0
+    #The Z Coordinate of the lobby
+    z: 0
+    #The World that the lobby is in
+    world: world
+    #The Gamemode For the lobby, 0=survival,1=creative,2=adventure, and 3=spectator, if server is not 1.8 and spectator is selected then it will default to adventure
+    gamemode: 2
+
+#Configurations for the various commands
+commands:
+    #Allows a player to list all of the arena's they can join
+    list:
+        permission: sinkingship.list
+        help: /ss list - Lists all the arena's you can join
+        enabled: true
+    #Allows a player to join the specified arena, as long as they have permission
+    join:
+        permission: sinkingship.join
+        help: /ss join [name] - Joins the specified arena
+        enabled: true
+    #Allows the player to leave the arena/game they are currently in
+    leave:
+        permission: sinkingship.leave
+        help: /ss leave - Leaves your current arena
+        enabled: true
+    #Teleports the player to the lobby if they are not in game
+    lobby:
+        permission: sinkingship.lobby
+        help: /ss lobby - Teleports you to the lobby
+        enabled: true
+    #Allows a play to spectate a game going on in a specific arena
+    spectate:
+        permission: sinkingship.spectate
+        help: /ss spectate [name] - Spectate the game in the specified arena
+        enabled: true
+    #Allows Players to vote to start the game sooner
+    vote:
+        permission: sinkingship.vote
+        help: /ss vote - Vote to start the game sooner
+        enabled: true
+    #Allows Administrators to force a game on a specified arena to start
+    start:
+        permission: sinkingship.admin.start
+        help: /ss start [name] - Force Start the specified arena
+        enabled: true
+    #Stops and resets the specified arena
+    stop:
+        permission: sinkingship.admin.stop
+        help: /ss stop [name] - Stop and reset the specified arena
+        enabled: true
+    #Base command for creating an arena
+    create:
+        permission: sinkingship.admin.create
+        help: /ss create [args] - Part of the arena creation process
+        enabled: true
+    #Sets the lobby spawn
+    setlobbyspawn:
+        permission: sinkingship.admin.setlobbyspawn
+        help: /ss setlobbyspawn - Set the lobby spawn to your specified location
+        enabled: true
+    #Enable the specified arena
+    enable:
+        permission: sinkingship.admin.enable
+        help: /ss enable [name] - Enable the specified arena
+        enabled: true
+    #Disable the specified arena
+    disable:
+        permission: sinkingship.admin.disable
+        help: /ss disable [name] - Disables the specified arena
+        enabled: true
+    #Delete the specified arena
+    delete:
+        permission: sinkingship.admin.delete
+        help: /ss delete [name] - Delete the specified arena
+        enabled: true
+    #See statistics about the specified arena
+    stats:
+        permission: sinkingship.stats
+        help: /ss stats [name] - See statistics about the specified arena
+        enabled: true
+    #Sets the waterspeed of the specified arena, if speed is blank then will revert to defualt waterspeed
+    setwaterspeed:
+        permission: sinkingship.admin.setwaterspeed
+        help: /ss setwaterspeed [name] [blocksPer] [seconds]  - Sets the water speed of the specified arena, if no speed is specified then the speed will revert to defualt
+        enabled: true
+    #Sets the timelimit for the specified arena, if timelimit is blank than it will revert to defualt timelimit
+    settimelimit:
+        permission: sinkingship.admin.settimelimit
+        help: /ss settimelimit [name] [timelimit] - Sets the time limit for the specified arena, if no timelimit is specified then the timelimit will revert to defualt
+        enabled: true
+    #Reloads the config and arenas files
+    reload:
+        permission: sinkingship.reload
+        help: /ss reload - Reloads the config and arena files
+        enabled: true
+    #Adds the sign wall for the specified arena
+    addwall:
+        permission: sinkingship.admin.adwall
+        help: /ss addwall - Adds the selected area as a sign wall
+        enabled: true
+    #Gives the player who executes the command an SS Selection wand
+    wand:
+        permission: sinkingship.admin.wand
+        help: /ss wand - Get the SS Selection wand
+        enabled: true
+
+
+
+
+#Messages
+
+
+#Prefix before all plugin messages
+prefix: &7[&bSS&7]&a
+
+#No Permission Message
+noPerm: §4You do not have permission to execute this command
+
+#Message for selecting the area in the arena creation process
+selectArea: Select the area of the arena with the SS wand, then try to create again.
+
+#Message for selecting the y level at which the water will start
+selectWaterStart: Stand at the height you want the water to start and type /ss create [name]
+
+#Message for selection the y level at which the water will stop and which players will be win when they go above it
+selectWaterEnd: Stand at the height you want the water to end at and type /ss create [name]
+
+#Message for selecting the area in which players will spawn in an arena
+selectSpawnArea: Select the area that you would like players to spawn in with the SS wand, then type /ss create [name]
+
+#Message for when arena creation process is completed
+arenaCreationComplete: Done!
